@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="سياسة الخصوصية وسرية البيانات الرسمية لتطبيق نظام سهل المحاسبي.">
+    <meta name="description" content="سياسة الخصوصية الرسمية لتطبيق نظام سهل المحاسبي - حماية تامة لبياناتك المحاسبية والمالية.">
     <title>سياسة الخصوصية | نظام سهل المحاسبي</title>
     
     <!-- Google Fonts: IBM Plex Sans Arabic -->
@@ -14,14 +14,15 @@
     <style>
         :root {
             --bg-page: #ffffff;
-            --text-primary: #111827;      /* Gray 900 */
-            --text-secondary: #374151;    /* Gray 700 */
-            --text-muted: #6b7280;        /* Gray 500 */
-            --border-color: #e5e7eb;      /* Gray 200 */
-            --border-dark: #cbd5e1;       /* Slate 300 */
-            --bg-subtle: #f9fafb;         /* Gray 50 */
-            --link-color: #1d4ed8;        /* Blue 700 */
-            --code-bg: #f3f4f6;
+            --bg-surface: #f8fafc;
+            --text-heading: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --font-main: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -31,179 +32,187 @@
         }
 
         body {
-            font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: var(--font-main);
             background-color: var(--bg-page);
-            color: var(--text-primary);
+            color: var(--text-body);
             line-height: 1.9;
-            font-size: 15.5px;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Top Header */
-        .site-header {
-            border-bottom: 1px solid var(--border-color);
+        /* Top Brand Navigation */
+        .site-nav {
+            border-bottom: 1px solid var(--border);
             background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
-        .header-inner {
-            max-width: 820px;
+        .nav-container {
+            max-width: 860px;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 18px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .brand-title {
-            font-size: 16px;
+        .brand-name {
+            font-size: 18px;
             font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.2px;
+            color: var(--text-heading);
+            letter-spacing: -0.3px;
         }
 
-        .header-meta {
+        .doc-badge {
             font-size: 13px;
             color: var(--text-muted);
+            background: var(--bg-surface);
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
         }
 
-        /* Main Document Wrapper */
-        .document-wrapper {
-            max-width: 820px;
+        /* Container */
+        .page-container {
+            max-width: 860px;
             margin: 0 auto;
             padding: 48px 24px 80px;
         }
 
         /* Document Header */
-        .doc-header {
+        .header-section {
             margin-bottom: 40px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .doc-title {
-            font-size: 32px;
+        .main-heading {
+            font-size: 34px;
             font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.35;
-            margin-bottom: 8px;
+            color: var(--text-heading);
+            line-height: 1.3;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
-        .doc-subtitle {
-            font-size: 16px;
+        .sub-heading {
+            font-size: 17px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-weight: 400;
         }
 
-        .doc-meta-table {
+        .meta-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px 32px;
-            font-size: 13.5px;
+            gap: 24px;
+            font-size: 14px;
             color: var(--text-muted);
-            background-color: var(--bg-subtle);
-            padding: 14px 18px;
+        }
+
+        .meta-bar span strong {
+            color: var(--text-heading);
+        }
+
+        /* Executive Summary Card */
+        .summary-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-right: 4px solid var(--primary);
             border-radius: 6px;
-            border: 1px solid var(--border-color);
+            padding: 22px 24px;
+            margin: 32px 0 40px;
         }
 
-        .doc-meta-item strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        /* Headings */
-        h2 {
-            font-size: 21px;
+        .summary-title {
+            font-size: 16px;
             font-weight: 700;
-            color: var(--text-primary);
-            margin-top: 44px;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 44px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-heading);
             margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-            letter-spacing: -0.2px;
+            letter-spacing: -0.3px;
         }
 
         h3 {
-            font-size: 16.5px;
+            font-size: 17px;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text-heading);
             margin-top: 24px;
             margin-bottom: 10px;
         }
 
-        /* Text and Paragraphs */
         p {
             margin-bottom: 16px;
-            color: var(--text-secondary);
+            color: var(--text-body);
             text-align: justify;
         }
 
-        p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Lists */
-        ul, ol {
+        ul {
             margin: 16px 0;
             padding-right: 24px;
-            color: var(--text-secondary);
         }
 
         li {
             margin-bottom: 10px;
+            color: var(--text-body);
             line-height: 1.8;
         }
 
-        /* Formal Callout / Note */
-        .formal-note {
-            background-color: var(--bg-subtle);
-            border-right: 3px solid var(--text-primary);
-            padding: 16px 20px;
-            margin: 24px 0;
-            font-size: 14.5px;
-            color: var(--text-secondary);
-            border-radius: 0 4px 4px 0;
+        li strong {
+            color: var(--text-heading);
         }
 
-        .formal-note strong {
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        /* Table */
-        .table-container {
+        /* Clean Table */
+        .table-wrap {
             width: 100%;
             overflow-x: auto;
             margin: 24px 0;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border);
             border-radius: 6px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 14.5px;
             text-align: right;
         }
 
         th {
-            background-color: var(--bg-subtle);
-            color: var(--text-primary);
+            background-color: var(--bg-surface);
+            color: var(--text-heading);
             font-weight: 600;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border);
             white-space: nowrap;
         }
 
         td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border);
             vertical-align: top;
-            color: var(--text-secondary);
+            color: var(--text-body);
             line-height: 1.75;
         }
 
@@ -211,281 +220,312 @@
             border-bottom: none;
         }
 
-        code {
+        tr:hover td {
+            background-color: #fafbfc;
+        }
+
+        .tech-id {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            background-color: var(--code-bg);
-            color: #1f2937;
+            background: #f1f5f9;
+            color: #334155;
             padding: 2px 6px;
             border-radius: 4px;
-            font-size: 12.5px;
-            direction: ltr;
+            font-size: 12px;
             display: inline-block;
+            margin-top: 4px;
+            direction: ltr;
         }
 
-        /* Contact Section */
-        .contact-box {
-            margin-top: 24px;
-            padding: 18px 20px;
-            background-color: var(--bg-subtle);
-            border: 1px solid var(--border-color);
+        /* Contact Block */
+        .contact-panel {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
             border-radius: 6px;
+            padding: 24px;
+            margin-top: 24px;
         }
 
-        .contact-box p {
-            margin-bottom: 6px;
+        .contact-panel p {
+            margin-bottom: 8px;
         }
 
         a {
-            color: var(--link-color);
+            color: var(--accent);
             text-decoration: none;
+            font-weight: 500;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        /* Document Footer */
-        .doc-footer {
+        /* Footer */
+        .page-footer {
             margin-top: 60px;
             padding-top: 24px;
-            border-top: 1px solid var(--border-color);
-            font-size: 13.5px;
-            color: var(--text-muted);
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-muted);
             flex-wrap: wrap;
             gap: 12px;
         }
 
         @media (max-width: 640px) {
-            .document-wrapper {
-                padding: 28px 18px 48px;
+            .page-container {
+                padding: 30px 18px 60px;
             }
-            .doc-title {
-                font-size: 25px;
-            }
-            .doc-meta-table {
-                flex-direction: column;
-                gap: 8px;
+            .main-heading {
+                font-size: 26px;
             }
             th, td {
-                padding: 10px 12px;
+                padding: 12px 14px;
             }
         }
 
         @media print {
-            .site-header {
+            .site-nav {
                 display: none;
             }
-            .document-wrapper {
+            .page-container {
                 padding: 0;
             }
             body {
-                font-size: 13pt;
+                font-size: 12pt;
+                color: #000;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <span class="brand-title">نظام سهل المحاسبي</span>
-            <span class="header-meta">وثيقة سياسة الخصوصية الرسمية</span>
+    <!-- Minimalist Brand Header -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <span class="brand-name">سهل المحاسبي</span>
+            <span class="doc-badge">وثيقة سياسة الخصوصية</span>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="document-wrapper">
+    <main class="page-container">
 
-        <header class="doc-header">
-            <h1 class="doc-title">سياسة الخصوصية وسرية البيانات</h1>
-            <p class="doc-subtitle">وثيقة بيان الممارسات والسياسات الخاصة بتطبيق "سهل المحاسبي" الصادرة لمتجر Google Play</p>
+        <header class="header-section">
+            <h1 class="main-heading">سياسة الخصوصية وسرية البيانات</h1>
+            <p class="sub-heading">نظام سهل المحاسبي لإدارة الحسابات والأنشطة التجارية</p>
             
-            <div class="doc-meta-table">
-                <div class="doc-meta-item"><strong>تاريخ السريان:</strong> 1 يناير 2026</div>
-                <div class="doc-meta-item"><strong>آخر تحديث:</strong> 17 أكتوبر 2026</div>
-                <div class="doc-meta-item"><strong>إصدار التطبيق:</strong> 4.0.0 وما فوق</div>
-                <div class="doc-meta-item"><strong>معرّف الحزمة:</strong> <code>com.sahl.maml.app</code></div>
+            <div class="meta-bar">
+                <span>تاريخ السريان: <strong>1 يناير 2026</strong></span>
+                <span>آخر مراجعة: <strong>أكتوبر 2026</strong></span>
+                <span>الإصدار: <strong>4.0.0</strong></span>
             </div>
         </header>
 
-        <!-- Section 1 -->
+        <!-- Executive Summary -->
+        <div class="summary-card">
+            <div class="summary-title">ملخص الخصوصية للمستخدمين</div>
+            <p class="summary-text">
+                نظام سهل المحاسبي مصمم ليعمل محلياً على جهازك بالكامل. كافة بياناتك المالية، فواتيرك، حساباتك، وسجلاتك التجارية تُخزن محلياً على هاتفك فقط، ولا نطلع عليها، ولا نملك أي خوادم لجمعها أو نسخها، ولا يتم بيعها أو مشاركتها مع أي جهة. أنت المالك الوحيد والمسؤول الحصري عن إدارة بياناتك.
+            </p>
+        </div>
+
+        <!-- 1. Introduction -->
         <section>
-            <h2>1. نظرة عامة ونطاق التطبيق</h2>
+            <h2>1. مقدمة ونطاق العمل</h2>
             <p>
-                توضح هذه الوثيقة سياسة الخصوصية المعتمدة لنظام <strong>سهل المحاسبي ("سهل" أو "التطبيق")</strong>. صُمم التطبيق لإدارة الحسابات المالية، قيود اليومية، المخزون، الفواتير، وسجلات المعاملات التجارية بين أصحاب الأعمال والعملاء والموردين والعمال.
+                نولي في <strong>نظام سهل المحاسبي ("سهل"، "نحن"، أو "التطبيق")</strong> أهمية مطلقة لحماية سرية وأمان المعلومات التجارية والمحاسبية لعملائنا. تُحدد هذه السياسة الأسس التي يقوم عليها التطبيق في التعامل مع البيانات، والأذونات المحدودة المطلوبة لتشغيل وظائف النظام المحاسبي على أجهزة الهواتف الذكية.
             </p>
             <p>
-                نلتزم في نظام سهل بحماية خصوصية وأمان المعلومات المحاسبية والتجارية لمستخدمينا بأعلى درجات المسؤولية والشفافية. يرتكز التطبيق على مبدأ أساسي وهو: <strong>السيادة والملكية المطلقة للمستخدم على كامل بياناته</strong>، مع توفير بيئة تشغيلية آمنة ومستقلة تماماً.
+                تنطبق هذه السياسة على كافة مستخدمي تطبيق سهل المحاسبي. باستخدامك للتطبيق، فإنك تقر وتوافق على الممارسات الموضحة في هذه الوثيقة.
             </p>
         </section>
 
-        <!-- Section 2 -->
+        <!-- 2. Local Architecture -->
         <section>
-            <h2>2. المعمارية المحلية المستقلة (Offline-First)</h2>
+            <h2>2. نموذج التشغيل والتخزين المحلي (Offline-First)</h2>
             <p>
-                يعتمد نظام سهل المحاسبي على بنية برمجية محلية بالكامل (Offline-First Architecture). تتم كافة العمليات المحاسبية، الحسابات الرياضية، وإدارة السجلات داخل جهاز المستخدم دون الحاجة للاتصال بخوادم وسيطة أو سحابية:
+                يعتمد التطبيق فلسفة تشغيل محلية ومستقلة:
             </p>
             <ul>
-                <li><strong>التخزين المحلي الآمن:</strong> تُخزن كافة السجلات في قاعدة بيانات محلية مشفرة (SQLite / Drift Engine) ضمن النطاق الآمن المعزول الخاص بالتطبيق (Application Sandbox) على ذاكرة الجهاز، ولا يمكن للتطبيقات الأخرى الوصول إليها.</li>
-                <li><strong>انعدام خوادم حفظ السجلات:</strong> لا يمتلك مطورو التطبيق أي خوادم خارجية لاستقبال أو تجميع السجلات المالية، ولا يتم إرسال أي أرقام فواتير أو أرصدة إلى أي طرف ثالث.</li>
+                <li><strong>حفظ محلي مستقل:</strong> تُسجل كافة المعاملات المالية والمحاسبية داخل قاعدة بيانات محلية مشفرة ومحمية على ذاكرة جهازك ضمن بيئة التطبيق المعزولة، دون الحاجة للاتصال بالإنترنت لإنجاز أي عملية.</li>
+                <li><strong>انعدام التخزين السحابي الإلزامي:</strong> لا يُلزم التطبيق مستخدميه بإنشاء حسابات على خوادم وسيطة، ولا نقوم برفع أو تجميع السجلات المحاسبية للمنشآت على أي خوادم تابعة لنا.</li>
             </ul>
         </section>
 
-        <!-- Section 3 -->
+        <!-- 3. Handled Data -->
         <section>
-            <h2>3. البيانات التي يعالجها التطبيق</h2>
+            <h2>3. البيانات التي يتعامل معها التطبيق</h2>
             <p>
-                يتعامل التطبيق حصرياً مع البيانات التي يقوم المستخدم بإدخالها طوعاً لإدارة أعماله:
+                يتعامل النظام فقط مع البيانات التي تدخلها بنفسك لإدارة نشاطك المالي والتجاري، وتشمل:
             </p>
             <ul>
-                <li><strong>البيانات المالية:</strong> فواتير المبيعات والمشتريات، سندات القبض والصرف، أرصدة الحسابات والصناديق، وحركات المخزون.</li>
-                <li><strong>بيانات أطراف التعامل:</strong> أسماء وأرقام هواتف العملاء، الموردين، والشركاء، لاستخدامها في إصدار السندات والتحقق من الحسابات.</li>
-                <li><strong>بيانات العمال والرواتب:</strong> أسماء العاملين، السلفيات، وحسابات أجور القطع والرواتب الشهرية.</li>
-                <li><strong>التقارير المصدرة:</strong> ملفات PDF وجداول Excel المحفوظة محلياً والمصدرة بناءً على طلب المستخدم المباشر.</li>
+                <li><strong>السجلات المحاسبية والمالية:</strong> فواتير المبيعات والمشتريات، سندات الصرف والقبض، القيود المحاسبية، وحركات الصناديق والمخزون.</li>
+                <li><strong>بيانات أطراف التعامل:</strong> الأسماء، أرقام الهواتف، والعناوين المسجلة للعملاء والموردين لغرض توثيق المعاملات وإصدار السندات.</li>
+                <li><strong>بيانات الموظفين والأجور:</strong> سجلات الرواتب، حسابات أجور القطعة، السلفيات، والبدلات.</li>
+                <li><strong>التقارير والمستندات المصدرة:</strong> المستندات بصيغة PDF أو جداول البيانات التي تطلب تصديرها أو مشاركتها بنفسك.</li>
             </ul>
         </section>
 
-        <!-- Section 4: Permissions -->
+        <!-- 4. Device Permissions -->
         <section>
-            <h2>4. الأذونات المطلوبة والغرض التشغيلي (Permissions)</h2>
+            <h2>4. أذونات الجهاز ومبررات استخدامها</h2>
             <p>
-                امتثالاً لسياسات Google Play المتعلقة ببيانات المستخدم الشخصية والحساسة (Personal and Sensitive User Data)، يوضح الجدول التالي الأذونات التي قد يطلبها التطبيق، والغرض الصريح والمحدد من كل إذن:
+                لتمكين بعض الوظائف التشغيلية، قد يطلب التطبيق عدداً محدوداً من الأذونات على جهازك، ويتم استخدام كل إذن في النطاق المحدد له فقط وبموافقة صريحة منك:
             </p>
 
-            <div class="table-container">
+            <div class="table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 20%;">الإذن</th>
-                            <th style="width: 28%;">المعرف البرمجي (Android)</th>
-                            <th style="width: 32%;">الغرض التشغيلي الصريح</th>
-                            <th style="width: 20%;">المعالجة والضمانات</th>
+                            <th style="width: 25%;">الإذن المطلوب</th>
+                            <th style="width: 45%;">الغرض التشغيلي</th>
+                            <th style="width: 30%;">طبيعة الاستخدام والضمانات</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>جهات الاتصال</strong><br><small style="color: var(--text-muted);">(اختياري تماماً)</small></td>
-                            <td><code>android.permission.READ_CONTACTS</code></td>
-                            <td><strong>تسهيل إدخال أرقام العملاء:</strong> تمكين المستخدم اختيارياً من جلب رقم هاتف واسم العميل أو المورد من دفتر الهاتف وتعبئته مباشرة في السند أو الفاتورة لتفادي الخطأ اليدوي.</td>
-                            <td><strong>معالجة محلية مؤقتة:</strong> تُقرأ جهة الاتصال المختارة فقط. لا يتم قراءة أو نسخ أو رفع دفتر العناوين، وتتم المعالجة محلياً دون مشاركتها إطلاقاً.</td>
+                            <td>
+                                <strong>جهات الاتصال</strong><br>
+                                <span class="tech-id">READ_CONTACTS</span>
+                            </td>
+                            <td>
+                                <strong>تسهيل إدخال بيانات العملاء والموردين:</strong> يُستخدم هذا الإذن بصورة اختيارية تماماً عند رغبتك في اختيار اسم ورقم هاتف عميل من دفتر هاتفك لتعبئته مباشرة داخل الفاتورة أو السند، بدلاً من كتابته يدوياً.
+                            </td>
+                            <td>
+                                <strong>معالجة محلية ولحظية:</strong> تُقرأ جهة الاتصال المحددة فقط داخل واجهة التطبيق. لا يتم مسح أو قراءة أو رفع سجل الهاتف، ولا يتم حفظه أو مشاركته مع أي طرف خارجي نهائياً.
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>التخزين والملفات</strong><br><small style="color: var(--text-muted);">(حتى Android 12)</small></td>
                             <td>
-                                <code>READ_EXTERNAL_STORAGE</code><br>
-                                <code>WRITE_EXTERNAL_STORAGE</code>
+                                <strong>التخزين والملفات</strong><br>
+                                <span class="tech-id">Storage</span>
                             </td>
-                            <td><strong>النسخ الاحتياطي والتقارير:</strong> حفظ وتصدير ملفات النسخ الاحتياطي المحاسبي، وتصدير فواتير وتقارير PDF على ذاكرة الجهاز.</td>
-                            <td>يقتصر على المجلدات المخصصة للمستندات والنسخ الاحتياطي؛ تم حجب أذونات الوسائط الموسعة.</td>
+                            <td>
+                                <strong>إدارة التقارير والنسخ الاحتياطي:</strong> حفظ وتصدير ملفات النسخ الاحتياطي للنظام، وتصدير فواتير وتقارير PDF على ذاكرة هاتفك لمشاركتها أو طباعتها.
+                            </td>
+                            <td>
+                                يقتصر الوصول على حفظ واسترجاع ملفات التطبيق المحاسبية فقط، ولا يطلع التطبيق على أي وسائط أو صور شخصية أخرى.
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>البلوتوث</strong><br><small style="color: var(--text-muted);">(للطابعات فقط)</small></td>
                             <td>
-                                <code>BLUETOOTH_CONNECT</code><br>
-                                <code>BLUETOOTH_SCAN</code>
+                                <strong>البلوتوث</strong><br>
+                                <span class="tech-id">Bluetooth</span>
                             </td>
-                            <td><strong>الطباعة الحرارية:</strong> الاقتران بطابعات الإيصالات اللاسلكية المحمولة (ESC/POS) لطباعة الفواتير والسندات الورقية.</td>
-                            <td>مضبوط بخاصية <code>neverForLocation</code>؛ لا يُستخدم ولا يرتبط بتحديد أو تتبع الموقع الجغرافي.</td>
+                            <td>
+                                <strong>الطباعة الحرارية المباشرة:</strong> الاقتران بطابعات الإيصالات المحمولة لطباعة الفواتير والسندات الورقية للعملاء.
+                            </td>
+                            <td>
+                                لا يُستخدم الإذن لتتبع الموقع الجغرافي، وينحصر عمله في التواصل مع أجهزة الطباعة المعتمدة.
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>المصادقة الحيوية</strong><br><small style="color: var(--text-muted);">(اختياري)</small></td>
                             <td>
-                                <code>USE_BIOMETRIC</code><br>
-                                <code>USE_FINGERPRINT</code>
+                                <strong>المصادقة الحيوية (البصمة)</strong><br>
+                                <span class="tech-id">Biometrics</span>
                             </td>
-                            <td><strong>حماية التطبيق:</strong> تمكين المستخدم من قفل وفتح التطبيق ببصمة الإصبع لحماية السجلات المالية على الأجهزة المشتركة.</td>
-                            <td>تتم المصادقة عبر بيئة نظام Android المعزولة؛ لا يطلع التطبيق ولا يخزن بيانات البصمة.</td>
+                            <td>
+                                <strong>حماية السجلات المالية:</strong> إتاحة قفل التطبيق ببصمة الإصبع أو التحقق الحيوي لمنع الوصول غير المصرح به على الأجهزة المشتركة.
+                            </td>
+                            <td>
+                                تتم عملية التحقق عبر نظام الحماية المدمج في الهاتف؛ لا يمتلك التطبيق أي وصول لبيانات البصمة ولا يقوم بتخزينها.
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>الإنترنت والشبكة</strong><br><small style="color: var(--text-muted);">(محدد ومقيد)</small></td>
                             <td>
-                                <code>INTERNET</code><br>
-                                <code>ACCESS_NETWORK_STATE</code>
+                                <strong>الاتصال بالشبكة</strong><br>
+                                <span class="tech-id">Network / Internet</span>
                             </td>
-                            <td><strong>استقرار التطبيق والمزامنة:</strong> إرسال تقارير الأعطال الفنية مجهولة المصدر عبر Firebase، والمزامنة السحابية الاختيارية عبر Google Drive.</td>
-                            <td>مقتصر على اتصالات مشفرة بـ HTTPS (ممنوع حركة المرور المفتوحة <code>usesCleartextTraffic=false</code>).</td>
+                            <td>
+                                <strong>المزامنة الاختيارية وتحسين الأداء:</strong> إرسال تقارير الأعطال البرمجية غير المعرفة، ومزامنة النسخ الاحتياطي السحابي الاختياري عبر Google Drive.
+                            </td>
+                            <td>
+                                جميع الاتصالات الخارجية مشفرة بتقنية HTTPS العالية الأمان، ويحظر التطبيق نقل البيانات عبر قنوات غير مشفرة.
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="formal-note">
-                <strong>إفصاح بارز عن إذن جهات الاتصال (In-App Disclosure):</strong>
-                عملاً بمتطلبات متجر Google Play، يعرض التطبيق نافذة إفصاح مسبقة وواضحة للمستخدم تشرح سبب طلب الإذن قبل توجيه الطلب إلى النظام، ولا يتم تفعيل الإذن إلا بموافقة صريحة واختيارية من المستخدم، مع إمكانية استخدام التطبيق وإدخال الأرقام يدوياً بشكل كامل في حال الرفض.
-            </div>
         </section>
 
-        <!-- Section 5: Third-Party -->
+        <!-- 5. Third-Party Services -->
         <section>
-            <h2>5. خدمات الأطراف الثالثة (Third-Party Services)</h2>
+            <h2>5. خدمات الأطراف الثالثة</h2>
             <p>
-                لا يحتوي التطبيق على أي مكتبات إعلانية أو أدوات تتبع لأغراض تجارية أو تسويقية. الخدمات الخارجية المعتمدة تقتصر على الآتي:
+                لا يتضمن التطبيق أي حزم إعلانية، ولا نستخدم أي أدوات تسويقية أو تتبعية تجمع بياناتك لأغراض ترويجية. الخدمات التقنية الخارجية تنحصر فقط في الآتي:
             </p>
             <ul>
-                <li><strong>Google Firebase Crashlytics:</strong> خدمة تحليل أعطال مقدمة من شركة Google LLC. تُستخدم لرصد الأخطاء البرمجية المفاجئة أثناء التشغيل بهدف تحسين استقرار النظام. تشمل البيانات المرسلة: نوع الجهاز، إصدار نظام التشغيل، وتفاصيل الخطأ التقني في الكود المصدري، وتخلو تماماً من أي أرقام فواتير أو بيانات مالية أو شخصية.</li>
-                <li><strong>Google Drive API:</strong> خدمة اختيارية لتسهيل النسخ الاحتياطي السحابي. في حال قيام المستخدم بربط حسابه، يتم إرسال ملف النسخة الاحتياطية المشفر مباشرة بين جهاز المستخدم وحسابه الخاص على Google Drive دون أي وسيط خارجي.</li>
+                <li><strong>خدمة رصد الأعطال (Google Firebase Crashlytics):</strong> تُستخدم لمساعدتنا في اكتشاف الأخطاء البرمجية المفاجئة وإصلاحها لضمان استقرار التطبيق. تقتصر البيانات على معلومات تقنية بحتة (مثل طراز الهاتف، إصدار نظام التشغيل، وموضع الخطأ البرمجي)، وتخلو كلياً من أي سجلات محاسبية أو أرقام مالية أو بيانات خاصة.</li>
+                <li><strong>النسخ الاحتياطي عبر Google Drive (اختياري):</strong> ميزة اختيارية بحتة لا تعمل إلا بتفعيل مباشر منك، حيث يتم نقل النسخة الاحتياطية المشفرة مباشرة بين هاتفك ومساحتك التخزينية الخاصة على Google Drive دون أي خوادم وسيطة بينهما.</li>
             </ul>
         </section>
 
-        <!-- Section 6: Security -->
+        <!-- 6. Sharing & Disclosure -->
         <section>
-            <h2>6. التدابير الأمنية وسلامة البيانات</h2>
+            <h2>6. مشاركة البيانات والإفصاح عنها</h2>
             <p>
-                يطبق النظام تدابير أمنية ملائمة لحماية السجلات المالية من الوصول غير المصرح به أو التلف:
+                نؤكد التزامنا التام بعدم بيع، تأجير، مقايضة، أو مشاركة أي من بيانات مستخدمينا مع أي جهة أو شركة تجارية لأي سبب من الأسباب. نظراً لأن البيانات لا تخرج من جهاز المستخدم ولا تمر عبر خوادمنا، فإننا لا نملك صلاحية الاطلاع عليها أو مشاركتها مع أي طرف.
+            </p>
+        </section>
+
+        <!-- 7. Data Security -->
+        <section>
+            <h2>7. أمن البيانات والحماية</h2>
+            <p>
+                نعتمد حزمة من الإجراءات والتدابير التقنية لضمان سلامة بياناتك:
             </p>
             <ul>
-                <li><strong>عزل بيئة التشغيل:</strong> الاستفادة من آليات الأمان المدمجة في نظام تشغيل Android لعزل بيانات التطبيق في مساحة تخزين خاصة ومحمية.</li>
-                <li><strong>التشفير والاتصال الآمن:</strong> استخدام بروتوكول TLS / HTTPS لكافة الاتصالات الشبكية المحدودة، وحظر الاتصالات غير المشفرة.</li>
-                <li><strong>حماية الكود (R8 Obfuscation):</strong> تقليص وتشويش الكود المصدري في النسخة النهائية المعتمدة لحماية المنطق الحسابي والملفات من محاولات الهندسة العكسية.</li>
+                <li><strong>عزل بيئة التشغيل:</strong> الاستفادة من آليات حماية نظام التشغيل لعزل قاعدة بيانات التطبيق ومنع وصول التطبيقات الأخرى إليها.</li>
+                <li><strong>التشفير الصارم:</strong> تشفير النسخ الاحتياطية واستخدام بروتوكولات التشفير القياسية (TLS / HTTPS) في كافة الاتصالات الخارجية.</li>
+                <li><strong>حماية الكود:</strong> تطبيق تقنيات تشويش وحماية الكود البرمجي لمنع محاولات التلاعب بالمنطق المالي أو الهندسة العكسية.</li>
             </ul>
         </section>
 
-        <!-- Section 7: Rights and Deletion -->
+        <!-- 8. Retention and Deletion -->
         <section>
-            <h2>7. حقوق المستخدم وسياسة حذف البيانات</h2>
+            <h2>8. الاحتفاظ بالبيانات وحذفها</h2>
             <p>
-                يتمتع مستخدم نظام سهل المحاسبي بالسيادة الكاملة على بياناته وفق المبادئ التالية:
+                يحتفظ المستخدم بالسيادة والتحكم الكامل في دورة حياة بياناته:
             </p>
             <ul>
-                <li><strong>الحذف الكامل والفوري:</strong> نظراً لأن التطبيق لا يحتفظ بنسخ من بياناتك على خوادم سحابية خارجية، فإن قيامك بحذف التطبيق من هاتفك أو مسح بيانات التخزين يؤدي إلى إتلاف وحذف كافة السجلات المالية وقاعدة البيانات نهائياً وبشكل لا يمكن استرجاعه.</li>
-                <li><strong>التصدير والاستخراج:</strong> يحق للمستخدم في أي وقت استخراج نسخة احتياطية محلية من بياناته أو تصدير فواتيره وسجلاته كملفات تقارير بصيغة PDF.</li>
+                <li><strong>الحذف الكامل:</strong> بما أن السجلات مخزنة محلياً على جهازك، فإن إلغاء تثبيت التطبيق أو النقر على "مسح بيانات التخزين" يؤدي إلى حذف كامل وفوري لقاعدة البيانات والمعاملات المالية بشكل نهائي وغير قابل للاسترجاع.</li>
+                <li><strong>النسخ والتصدير:</strong> يمكنك استخراج نسخة احتياطية من بياناتك أو تصدير التقارير بصيغة PDF في أي وقت والاحتفاظ بها في المكان الذي يناسبك.</li>
             </ul>
         </section>
 
-        <!-- Section 8: Children Privacy -->
+        <!-- 9. Minors -->
         <section>
-            <h2>8. خصوصية الأطفال</h2>
+            <h2>9. خصوصية الأطفال</h2>
             <p>
-                نظام سهل المحاسبي موجه حصرياً للاستخدام التجاري وإدارة الأعمال والأنشطة المهنية من قِبل الأفراد والمنشآت المؤهلة قانوناً. التطبيق لا يستهدف ولا يجمع عمداً أي بيانات تتعلق بالأطفال دون سن 13 عاماً (أو السن القانوني المحدد في دولتك).
+                نظام سهل المحاسبي موجه للأغراض التجارية والمهنية لأصحاب الأعمال والمنشآت التجارية، ولا يستهدف ولا يجمع عمداً أي معلومات تتعلق بالأطفال دون السن القانونية.
             </p>
         </section>
 
-        <!-- Section 9: Amendments -->
+        <!-- 10. Updates -->
         <section>
-            <h2>9. التعديلات على وثيقة سياسة الخصوصية</h2>
+            <h2>10. التعديلات على سياسة الخصوصية</h2>
             <p>
-                قد يتم تحديث بنود هذه السياسة دورياً لمواكبة التحديثات الوظيفية في التطبيق أو استجابةً للمتطلبات التنظيمية الصادرة عن متجر Google Play. يُشار إلى تاريخ التعديل الأخير في أعلى الوثيقة. يُعد استمرار استخدام التطبيق بعد تاريخ سريان التعديلات بمثابة إقرار وموافقة على البنود المحدثة.
+                يجوز لنا تحديث هذه السياسة من وقت لآخر لمواكبة التحديثات الوظيفية في النظام أو تلبية المتطلبات التنظيمية العامة. يتم نشر التحديثات على هذه الصفحة مصحوبة بتاريخ آخر مراجعة، ويُعتبر استمرار استخدامك للتطبيق بعد أي تحديث بمثابة موافقة على البنود المعدلة.
             </p>
         </section>
 
-        <!-- Section 10: Contact -->
+        <!-- 11. Contact -->
         <section>
-            <h2>10. معلومات التواصل والاستفسارات</h2>
+            <h2>11. التواصل ومسؤول الخصوصية</h2>
             <p>
-                لأي أسئلة أو استفسارات تتعلق بسياسة الخصوصية أو ممارسات معالجة البيانات في نظام سهل المحاسبي، يرجى التواصل معنا عبر القنوات الرسمية التالية:
+                إذا كانت لديك أي استفسارات أو ملاحظات تتعلق بسياسة الخصوصية أو معايير حماية البيانات، يسعدنا تواصلك معنا مباشرة:
             </p>
-            <div class="contact-box">
-                <p><strong>الجهة المسؤولة:</strong> فريق تطوير نظام سهل المحاسبي</p>
-                <p><strong>البريد الإلكتروني المعتمد للدعم والخصوصية:</strong> <a href="mailto:dasaam0012@gmail.com">dasaam0012@gmail.com</a></p>
-                <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 8px;">يتم الرد على الاستفسارات الفنية والقانونية خلال 48 ساعة عمل.</p>
+            <div class="contact-panel">
+                <p><strong>الجهة المسؤولة:</strong> فريق تطوير ودعم نظام سهل المحاسبي</p>
+                <p><strong>البريد الإلكتروني المعتمد:</strong> <a href="mailto:dasaam0012@gmail.com">dasaam0012@gmail.com</a></p>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 6px;">نلتزم بالرد على كافة الاستفسارات خلال 24 إلى 48 ساعة عمل.</p>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="doc-footer">
+        <footer class="page-footer">
             <div>جميع الحقوق محفوظة © نظام سهل المحاسبي 2026</div>
             <div>معرّف الحزمة: <code>com.sahl.maml.app</code></div>
         </footer>
